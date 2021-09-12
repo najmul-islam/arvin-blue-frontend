@@ -9,8 +9,14 @@ export const PostsProvider = ({ children }) => {
 
   const fetchCategories = () => {
     fetch(categories_url)
-      .then((res) => res.json())
-      .then((categories) => {
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error(response.statusText);
+        }
+      })
+      .then((movies) => {
         setCategories(categories);
       })
       .catch((error) => {
