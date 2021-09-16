@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
@@ -7,6 +7,13 @@ import "./style/catergory.css";
 
 const Category = () => {
   const { categories, setCategories } = usePost();
+  const [newCategories, setNewCategories] = useState([]);
+  console.log(categories.name);
+
+  useEffect(() => {
+    const newCategories = [...categories];
+    setNewCategories(newCategories);
+  }, [categories]);
 
   const options = {
     responsiveClass: true,
@@ -25,7 +32,7 @@ const Category = () => {
   return (
     <div className="bg-light">
       <OwlCarousel {...options} className="owl-container container">
-        {categories.map((category) => (
+        {newCategories.map((category) => (
           <span key={category.id} className="item text-secondary category">
             {category.name}
           </span>

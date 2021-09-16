@@ -1,16 +1,26 @@
-import React from "react";
-import useDarkMode from "../../hook/useDarkMode";
-import { FaSun, FaMoon } from "react-icons/fa";
+import React, { useState } from "react";
+import styled from "styled-components";
+import { useTheme } from "../../theme/Theme";
+import { FaSun, FaRegSun, FaMoon, FaRegMoon } from "react-icons/fa";
 
 const ThemeButton = () => {
-  const [colorTheme, setTheme] = useDarkMode();
+  const [theme, toggleTheme] = useTheme();
+  const [hover, setHover] = useState(false);
+
+  const onHover = () => {
+    setHover(true);
+  };
+  const onLeave = () => {
+    setHover(false);
+  };
+
   return (
     <>
-      <div onClick={() => setTheme(colorTheme)} className="">
-        {colorTheme === "light" ? (
-          <FaSun className="fs-4 mx-md-4 mx-0 my-md-0 my-4 d-md-inline-block d-block cursor-pointer text-white" />
+      <div onClick={toggleTheme} onMouseEnter={onHover} onMouseLeave={onLeave}>
+        {theme === "light" ? (
+          <span>{hover ? <Moon /> : <RegMoon />} </span>
         ) : (
-          <FaMoon className="fs-4 mx-md-4 mx-0 my-md-0 my-4 d-md-inline-block d-block cursor-pointer" />
+          <span>{hover ? <Sun /> : <RegSun />}</span>
         )}
       </div>
     </>
@@ -18,3 +28,26 @@ const ThemeButton = () => {
 };
 
 export default ThemeButton;
+
+const Sun = styled(FaSun)`
+  transition: all 0.5s linear;
+  cursor: pointer;
+  font-size: 22px;
+`;
+const RegSun = styled(FaRegSun)`
+  transition: all 0.5s linear;
+  cursor: pointer;
+  font-size: 22px;
+`;
+
+const Moon = styled(FaMoon)`
+  transition: all 0.5s linear;
+  cursor: pointer;
+  font-size: 22px;
+`;
+
+const RegMoon = styled(FaRegMoon)`
+  transition: all 0.5s linear;
+  cursor: pointer;
+  font-size: 22px;
+`;

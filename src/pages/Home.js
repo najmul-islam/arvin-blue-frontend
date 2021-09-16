@@ -1,11 +1,9 @@
 import React from "react";
-import CategoryV1 from "../components/header/CategoryV1";
 
 const Home = () => {
   return (
-    <div>
+    <div className="py-5">
       <h1>Home Page</h1>
-      <CategoryV1 />
       Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit
       repudiandae alias modi at, repellendus fugiat sequi accusantium
       reiciendis, totam nisi tempora deserunt dolore facilis a eligendi debitis,
