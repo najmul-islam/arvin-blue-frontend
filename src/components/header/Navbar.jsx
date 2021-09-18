@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
 import ThemeButton from "./ThemeButton";
-import { Container } from "styled-bootstrap-grid";
 import {
   Nav,
   Logo,
@@ -34,7 +33,7 @@ const Navbar = () => {
 
   return (
     <div>
-      <Container>
+      <div className="container-md">
         <Nav>
           <LogoLink to="/">
             <Logo className="center" src="images/logo1.png" alt="logo" />
@@ -74,7 +73,7 @@ const Navbar = () => {
           </Navmenu>
           <ThemeButton />
         </Nav>
-      </Container>
+      </div>
     </div>
   );
 };

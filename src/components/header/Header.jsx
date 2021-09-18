@@ -2,16 +2,15 @@ import React from "react";
 import Headroom from "react-headroom";
 import styled from "styled-components";
 import Navbar from "./Navbar";
-import Category from "./Category";
-import Sidebar from "./Sidebar";
+
+import Categories from "./Categories";
 
 const Header = () => {
   return (
     <Headroom>
       <HeaderWrapper className="header-bg">
         <Navbar />
-        {/* <Category /> */}
-        <Sidebar />
+        <Categories />
       </HeaderWrapper>
     </Headroom>
   );

@@ -28,9 +28,8 @@ export const Nav = styled.nav`
   justify-content: space-between;
   align-items: center;
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 500;
   position: relative;
-  /* border-bottom: 0.5px solid; */
 
   @media (max-width: 768px) {
     display: flex;
@@ -49,7 +48,6 @@ export const Menubar = styled.div`
     left: 0px;
     font-size: 30px;
     cursor: pointer;
-    z-index: 999;
   }
 `;
 
@@ -58,10 +56,11 @@ export const Navmenu = styled.ul`
   list-style: none;
   text-align: center;
   justify-content: end;
-
+  z-index: 999;
   user-select: none;
   margin: 0;
   padding: 0;
+
   @media (max-width: 768px) {
     display: flex;
     flex-direction: column;
