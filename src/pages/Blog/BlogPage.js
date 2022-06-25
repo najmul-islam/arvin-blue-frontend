@@ -3,7 +3,7 @@ import Posts from "../../components/blog/Posts";
 
 const BlogPage = () => {
   return (
-    <div>
+    <div className="container-md">
       <Posts />
     </div>
   );

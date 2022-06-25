@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { PostHead, PostDesc } from "./style/post.style";
+import { PostHead, PostDesc } from "./style/categoryPost.style";
 import ReactMarkdown from "react-markdown";
 const url = process.env.REACT_APP_API;
 
-const SinglePost = () => {
+const CategorySinglePost = () => {
   const [singlePost, setSinglePost] = useState({});
   const [imgUrl, setImgUrl] = useState("");
   const params = useParams();
@@ -30,7 +30,7 @@ const SinglePost = () => {
 
   useEffect(() => {
     getParams();
-  }, [params]);
+  }, []);
 
   return (
     <>
@@ -57,4 +57,4 @@ const SinglePost = () => {
   );
 };
 
-export default SinglePost;
+export default CategorySinglePost;

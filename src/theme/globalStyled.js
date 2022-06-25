@@ -44,7 +44,8 @@ export const GlobalStyle = createGlobalStyle`
     .tag{
       color: ${({ theme }) => theme.textSecondery};
       &:hover{
-        color: ${({ theme }) => theme.textSeconderyHover}
+        color: ${({ theme }) => theme.textSeconderyHover};
+        transition: all 0.5s ease-in-out;
       }
     }
 
@@ -57,6 +58,26 @@ export const GlobalStyle = createGlobalStyle`
     }
     .saparator{
        background: ${({ theme }) => theme.textSecondery};
+    }
+
+    /* post */
+    .post-container{
+     box-shadow: ${({ theme }) => theme.boxShadow};
+    }
+    .post-head{
+       border-bottom: 1px solid;
+      border-color: ${({ theme }) => theme.borderColor};
+    }
+    .post-btn{
+       background: ${({ theme }) => theme.textPrimery};
+       color: ${({ theme }) => theme.background};
+       transition: all 0.5s ease-in-out;
+       &:hover{
+         background: ${({ theme }) => theme.textSecondery};
+       }
+       &:active{
+        background: ${({ theme }) => theme.textSecondery};
+       }
     }
 `;
 

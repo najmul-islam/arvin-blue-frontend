@@ -1,8 +1,8 @@
-import SinglePost from "../../components/blog/SinglePost";
+import CategorySinglePost from "../../components/categoryPost/CategorySinglePost";
 const SinglePostPage = () => {
   return (
     <div className="container-md">
-      <SinglePost />
+      <CategorySinglePost />
     </div>
   );
 };

@@ -2,7 +2,7 @@ import React from "react";
 
 const Home = () => {
   return (
-    <div className="py-5">
+    <div>
       <h1>Home Page</h1>
       Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit
       repudiandae alias modi at, repellendus fugiat sequi accusantium

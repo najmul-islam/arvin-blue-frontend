@@ -13,7 +13,7 @@ export const Theme = ({ children }) => {
   const toggleTheme = () => {
     return theme === "light" ? setMode("dark") : setMode("light");
   };
-  console.log("Toggle buttone");
+
   useEffect(() => {
     const localTheme = window.localStorage.getItem("theme");
     localTheme ? setTheme(localTheme) : setTheme("dark");

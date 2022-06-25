@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { usePost } from "../../context/PostsContext";
 import ThemeButton from "./ThemeButton";
 import {
   Nav,
@@ -13,6 +14,8 @@ import { FaAlignLeft, FaTimes } from "react-icons/fa";
 
 const Navbar = () => {
   const [active, setActive] = useState(false);
+  const { handleRefresh } = usePost();
+
   let menuRef = useRef();
 
   const handleClick = () => {
@@ -58,12 +61,13 @@ const Navbar = () => {
                 className="navlink"
                 activeClassName="navactive"
               >
-                Blog
+                Blogs
               </Navlink>
             </Li>
             <Li className="navafter">
               <Navlink
                 to="/about"
+                exact
                 className="navlink"
                 activeClassName="navactive"
               >

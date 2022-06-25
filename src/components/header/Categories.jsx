@@ -1,6 +1,6 @@
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import TinySlider from "tiny-slider-react";
-import { usePost } from "../../context/PostsContext";
+import { useCategory } from "../../context/CategoryContext.js";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 import {
   Container,
@@ -9,10 +9,11 @@ import {
   BtnContainer,
   SlideBtn,
   Separator,
+  TagLink,
 } from "./style/Categories.style";
 
 const Categories = () => {
-  const { categories } = usePost();
+  const { categories, handleCategory } = useCategory();
   const ts = useRef(null);
 
   const onGoTo = (dir) => {
@@ -29,15 +30,24 @@ const Categories = () => {
     gutter: 20,
   };
 
+  const renderTags = (tag) => {
+    let name = tag;
+    name = name.toLowerCase().replace(/\s/g, "-");
+    const url = `/category/${name}`;
+    return url;
+  };
+
   return (
     <Container className="container-md">
       {/* slider */}
       <SlideContainer className="slide-container">
         <TinySlider ref={ts} settings={settings}>
           {categories.map((category) => (
-            <Tag className="tag" key={category.id}>
-              {category.name}{" "}
-            </Tag>
+            <TagLink key={category.id} to={renderTags(category.name)}>
+              <Tag className="tag" onClick={() => handleCategory(category)}>
+                {category.name}
+              </Tag>
+            </TagLink>
           ))}
         </TinySlider>
       </SlideContainer>

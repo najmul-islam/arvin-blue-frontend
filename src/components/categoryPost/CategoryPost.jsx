@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { PostImg, PostBtn, Tags } from "./style/post.style";
+import { PostImg, PostBtn, Tags } from "./style/categoryPost.style";
 const url = process.env.REACT_APP_API;
 
-const Post = ({ post }) => {
+const CategoryPost = ({ post }) => {
   const [tags, setTags] = useState([]);
 
   useEffect(() => {
     const tags = post.categories;
     setTags(tags);
-  }, []);
+  }, [post.categories]);
 
   return (
     <>
@@ -40,4 +40,4 @@ const Post = ({ post }) => {
   );
 };
 
-export default Post;
+export default CategoryPost;
